@@ -28,7 +28,7 @@ pipeline{
         stage('Deploy'){
          steps{
              echo "echo Deploying to ${BRANCH_NAME}..."
-             bat "mvn clean deploy -Denvironment=${params.deploy_environment} -Danypoint.platform.client_id='b0ac704f18b049a4a43dde2b014fc562' -Danypoint.platform.client_secret='10D036e59F1246dd86f97cb4e678e3B4' -DmuleDeploy"
+             bat "mvn clean deploy -Denvironment=${params.deploy_environment} -DmuleDeploy"
            }   
         }
     }
