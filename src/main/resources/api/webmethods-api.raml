@@ -1,0 +1,33 @@
+#%RAML 1.0
+title: Webmethods-api
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/354b4728-6eb1-4c76-82fc-561e6977f9f8/v1 # baseUri: https://localhost:8081/v1
+protocols:
+  - HTTPS
+securitySchemes:
+  Basic:
+    type: Basic Authentication 
+/getSample:
+  get:
+    description: To get the sample information
+    responses:
+      200:
+        body:
+          application/json:
+             example: {
+               "code": 200,
+               "message": "succesfull"              
+              }
+      400:
+        body:
+          application/json:
+            example: {
+              "code": 400,
+              "message": "Bad Request"
+            }
+      500:
+        body:
+          application/json:
+            example: {
+              "code": 500,
+              "message": "Internal Sever Request"
+            }
