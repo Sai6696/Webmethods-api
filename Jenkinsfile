@@ -7,11 +7,12 @@ pipeline{
     }
     stages{
         stage('Checkout'){
+        steps{
 			bat 'git clean -f'		
 			bat 'git reset --hard'  
 			bat 'git checkout .'              
             }
-        }
+           }
         stage('Build'){
             steps{
                  echo "echo Building ${BRANCH_NAME}..."
